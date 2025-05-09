@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Website Blocker",
+  "version": "1.0",
+  "description": "Block websites on your blocklist",
+  "permissions": ["storage", "tabs", "scripting"],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["popup.js"]
+    }
+  ],
+  "author": "TAVnotDove",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Website Blocker"
+  }
+}
